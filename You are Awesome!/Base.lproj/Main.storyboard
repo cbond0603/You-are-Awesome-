@@ -31,8 +31,12 @@
                                 <color key="textColor" red="0.48904603720000001" green="0.11462456729999999" blue="0.086247079069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-we-kkv">
+                                <rect key="frame" x="49" y="216" width="313" height="646"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k80-4F-Lys">
-                                <rect key="frame" x="33" y="44" width="310" height="125"/>
+                                <rect key="frame" x="52" y="44" width="310" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.48904603720000001" green="0.11462456729999999" blue="0.086247079069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -43,6 +47,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="fJU-we-kkv" id="jfR-PN-N3Y"/>
                         <outlet property="messageLabel" destination="wMw-xB-ENH" id="oU2-lP-MdJ"/>
                     </connections>
                 </viewController>
