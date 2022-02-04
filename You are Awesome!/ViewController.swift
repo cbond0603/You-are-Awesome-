@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         imageNumber = nonRepeatingRandoms(originalNumber: imageNumber, upperLimit: totalNumberOfImages-1)
         imageView.image = UIImage(named: "image\(imageNumber)")
         
-        soundNumber = nonRepeatingRandoms(originalNumber: soundNumber, upperLimit: totalNumberOfImages-1)
+        soundNumber = nonRepeatingRandoms(originalNumber: soundNumber, upperLimit: totalNumberOfSounds-1)
         playSound(name: "sound\(soundNumber)")
     }
 }
