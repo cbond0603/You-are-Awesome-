@@ -11,13 +11,14 @@ import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var playSoundSwitch: UISwitch!
     
     var imageNumber = -1
     var messageNumber = -1
     var soundNumber = -1
     let totalNumberOfImages = 9
     let totalNumberOfSounds = 10
-    var audioplayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer!
     
     
     override func viewDidLoad() {
@@ -27,8 +28,8 @@ class ViewController: UIViewController {
     func playSound(name: String){
         if let sound = NSDataAsset(name: name){
             do {
-                try audioplayer = AVAudioPlayer(data: sound.data)
-                audioplayer.play()
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
                 
             } catch {
                 print("😢 Error: \(error.localizedDescription) could not read")
@@ -56,7 +57,15 @@ class ViewController: UIViewController {
         imageView.image = UIImage(named: "image\(imageNumber)")
         
         soundNumber = nonRepeatingRandoms(originalNumber: soundNumber, upperLimit: totalNumberOfSounds-1)
-        playSound(name: "sound\(soundNumber)")
+        if playSoundSwitch.isOn {
+            playSound(name: "sound\(soundNumber)")
+        }
+    }
+    
+    @IBAction func playSoundToggled(_ sender: UISwitch) {
+        if !sender.isOn && audioPlayer != nil{
+            audioPlayer.stop()
+        }
     }
 }
 
